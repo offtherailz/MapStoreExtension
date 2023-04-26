@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Check branch
-      # if: ${{ github.repository != 'geosolutions-it/MapStoreExtension' || github.ref == 'master' }}
+      if: ${{ github.repository != 'offtherailz/MapStoreExtension' || github.ref == 'master' }}
       uses: actions/github-script@v3
       with:
         script: |
