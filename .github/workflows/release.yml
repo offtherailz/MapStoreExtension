@@ -29,7 +29,10 @@ jobs:
       with:
         script: |
             core.setFailed('This workflow can not run on master branch')
-    - uses: actions/checkout@v2
+    - name: Checkout branch
+      uses: actions/checkout@v3
+    - name: submodule update
+      run: git submodule update --init --recursive
     - name: Fix versions, commit and push new tag
       run: |
         git tag ${VERSION} # create tag
