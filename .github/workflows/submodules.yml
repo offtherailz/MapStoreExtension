@@ -20,6 +20,8 @@ jobs:
       # Initialize or update each one recursively
       - name: Pull & update submodules recursively
         run: |
+          ## Set the branch to the current branch with the same name of the main repo
+          git submodule set-branch --branch ${{ github.ref }}
           git submodule update --init --recursive
           git submodule update --recursive --remote
 
